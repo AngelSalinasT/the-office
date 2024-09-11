@@ -9,3 +9,4 @@ Route::get('/index', [ProductController::class, 'index'])->name('index');
 Route::get('/show/{id}', [ProductController::class, 'show'])->name('show');
 Route::delete('/delete/{id}', [ProductController::class, 'delete'])->name('delete');
 Route::put('/update/{id}', [ProductController::class, 'update'])->name('update');
+Route::get('/products/{id}/pdf', [ProductController::class, 'generatePdf'])->name('product.pdf');

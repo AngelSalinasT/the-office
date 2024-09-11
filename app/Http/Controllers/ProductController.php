@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ProductController extends Controller
 {
@@ -62,5 +63,17 @@ class ProductController extends Controller
         // Redirigir a la vista de detalles del vehículo actualizado
         return redirect()->route('show', $product->id);
     }
+
+    public function generatePdf($id)
+    {
+        $product = Product::findOrFail($id);
+
+        // Cargar la vista y pasarle los datos del producto
+        $pdf = Pdf::loadView('product_pdf', compact('product'));
+
+        // Descargar el PDF con un nombre de archivo
+        return $pdf->download('product-details.pdf');
+    }
+
 
 }
