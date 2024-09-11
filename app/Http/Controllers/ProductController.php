@@ -31,7 +31,7 @@ class ProductController extends Controller
 
     public function store(Request $request) {
         $product = new Product();
-        $product->brand = $request->brand;
+        $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
         $product->save();
@@ -48,7 +48,7 @@ class ProductController extends Controller
     public function update(Request $request, $id) {
         // Validar los datos entrantes
         $validatedData = $request->validate([
-            'brand' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
             'description' => 'required|string',
             'price' => 'required|numeric',
         ]);

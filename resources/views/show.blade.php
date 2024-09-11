@@ -9,10 +9,10 @@
         @method('PUT')
         <div class="container mx-auto justify-center ">
             <div class="mb-4">
-                <label for="brand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand</label>
-                <input type="brand" name="brand" id="brand" value="{{$product->brand}}"
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                <input type="name" name="name" id="name" value="{{$product->name}}"
                     class="bg-gray-50 border border-gray-300 value text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Enter brand" required />
+                    placeholder="Enter name" required />
             </div>
             <div class="mb-6">
                 <label for="description"
